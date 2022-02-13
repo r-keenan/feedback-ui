@@ -11,16 +11,28 @@ export const FeedbackProvider = ({ children }) => {
     { id: 3, text: "This is feedback item 3", rating: 7 },
   ]);
 
+  const [feedbackEdit, setFeedbackEdit] = useState({ item: {}, edit: false });
+
+  //Add Feedback
   const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4();
     //takes the newFeedback object and spreads the current feedback state to create the new state.
     setFeedback([newFeedback, ...feedback]);
   };
 
+  //Delete Feedback
   const deleteFeedback = (id) => {
     if (window.confirm("Are you sure that you want to delete?")) {
       setFeedback(feedback.filter((item) => item.id !== id));
     }
+  };
+
+  //Set item to be updated
+  const editFeedback = (item) => {
+    setFeedbackEdit({
+      item,
+      edit: true,
+    });
   };
 
   return (
@@ -29,6 +41,7 @@ export const FeedbackProvider = ({ children }) => {
         feedback,
         deleteFeedback,
         addFeedback,
+        editFeedback,
       }}
     >
       {children}
