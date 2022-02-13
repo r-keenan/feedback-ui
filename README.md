@@ -43,6 +43,10 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 This is for running JSON Server. This is a script that I added in.
 
+### 'npm run dev'
+
+This first runs the "npm run server" script and then runs the "npm start" script.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
