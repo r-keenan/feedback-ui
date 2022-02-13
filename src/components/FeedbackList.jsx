@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
 import FeedbackItem from "./FeedbackItem";
 
-function FeedbackList({ feedback, handleDelete }) {
+export default function FeedbackList({ feedback, handleDelete }) {
   if (!feedback || feedback.length === 0) {
     return <p>No Feedback Yet</p>;
   } else {
@@ -38,5 +38,3 @@ FeedbackList.propTypes = {
     })
   ),
 };
-
-export default FeedbackList;

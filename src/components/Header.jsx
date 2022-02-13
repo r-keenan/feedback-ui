@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-function Header({ text, bgColor, textColor }) {
+export default function Header({ text, bgColor, textColor }) {
   const headerStyles = {
     backgroundColor: bgColor,
     color: textColor,
@@ -29,5 +29,3 @@ Header.propTypes = {
   bgColor: PropTypes.string,
   textColor: PropTypes.string,
 };
-
-export default Header;
