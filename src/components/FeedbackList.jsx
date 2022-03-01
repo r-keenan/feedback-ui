@@ -11,9 +11,7 @@ export default function FeedbackList() {
     return <p>No Feedback Yet</p>;
   }
 
-  return isLoading ? (
-    <Spinner />
-  ) : (
+  return (
     <div className="feedback-list">
       <AnimatePresence>
         {feedback.map((item) => (
