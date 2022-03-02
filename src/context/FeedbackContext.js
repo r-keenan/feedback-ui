@@ -10,7 +10,15 @@ export const FeedbackProvider = ({ children }) => {
 
   useEffect(() => {
     fetchFeedback();
-  }, []);
+
+    const interval = setInterval(() => {
+      fetchFeedback();
+      console.log("Pulling data using setInterval");
+    }, 10000);
+
+    //If you do not clear the interval, you will have performance issues.
+    return () => clearInterval(interval);
+  }, []); //Infinite loop if you do not add the dependency array
 
   // Fetch feedback
   const fetchFeedback = async () => {
